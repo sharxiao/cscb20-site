@@ -1,0 +1,126 @@
+<!DOCTYPE html> <!-- this just specifies that this is an html file-->
+<html>  
+    <head>
+        <meta charset="utf-8"> <!--standard. turns our code into 8 bit or smth. always add-->
+        <meta name="viewport" content = "width=device-width, initial-scale=1"> <!-- will allow website to resize depending on laptop/phone etc-->
+        <title>Grades</title> <!--this part is what appears on the tab header-->
+    
+         <!-- fonts -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> <!-- regular weight -->
+         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"> <!-- diff weight -->
+
+        <link rel="stylesheet" href="../static/styles.css" /> <!-- this is where we'll load in the css file-->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?"/>
+    </head>
+    <body>
+        <div class = "header">Grades</div>
+        <br>
+        <div class = "nav_bar">
+            <ul>
+                <li>
+                    <a href = "{{ url_for('welcome') }}" class = "bttn">Home</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('profile') }}" class = "current-bttn">Profile</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('announcements') }}" class = "bttn">Announcements</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('syllabus') }}" class = "bttn">Syllabus</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('lectureSlides') }}" class = "bttn">Lectures</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('assignments') }}" class = "bttn">Assignments</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('labs') }}" class = "bttn">Labs</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('officeHours') }}" class = "bttn">Office Hours</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('piazza') }}" class = "bttn">Piazza</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('markus') }}" class = "bttn">Markus</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('courseTeam') }}" class = "bttn">Course Team</a>
+                </li>
+            </ul>
+        </div>
+        <div class = "content">
+            <div class = "gradesContent">
+                <form id="form1">
+                    <div class="divGradesTable">
+                        <div class="headRow">
+                            <div class="divGradesCell">Student Utorid</div>
+                            <div  class="divGradesCell">A1</div>
+                            <div  class="divGradesCell">A2</div>
+                            <div  class="divGradesCell">A3</div>
+                            <div  class="divGradesCell">Midterm</div>
+                            <div  class="divGradesCell">Final</div>
+                        </div>
+                        {% for Grades in query_grades_result %}
+                            {% if Grades.utorid == session.name %}
+                    
+                                <div class="divRow">
+                                    <div class="divGradesCell">{{ Grades.utorid }}</div>
+                                    <div class="divGradesCell">{{ Grades.a1 }}</div>
+                                    <div class="divGradesCell">{{ Grades.a2 }}</div>
+                                    <div class="divGradesCell">{{ Grades.a3 }}</div>
+                                    <div class="divGradesCell">{{ Grades.midterm }}</div>
+                                    <div class="divGradesCell">{{ Grades.final }}</div>
+                                </div>
+                            {% endif %}
+                        
+                        {% endfor %} 
+                    </div>
+                </form>
+                <h3>Submit a remark request</h3>
+                <p>(Type Yes or No. If yes, please provide reasoning for remark.)</p>
+                <br>
+                <form action="/gradesStudent" method = "post" class="remarkForm">
+                    <!--<label for="student_id">Student Utorid</label>
+                    <input type="text" id="Student_ID" name="Student_ID">-->
+        
+                    <label for="A1_remark"> A1 Remark</label><br>
+                    <input type="text" id="A1_remark" name="A1_remark" class="remarkLabel">
+                    <br>
+        
+                    <label for="A2_remark"> A2 Remark</label><br>
+                    <input type="text" id="A2_remark" name="A2_remark" class="remarkLabel">
+                    <br>
+        
+                    <label for="A3_remark"> A3 Remark</label><br>
+                    <input type="text" id="A3_remark" name="A3_remark" class="remarkLabel">
+                    <br>
+        
+                    <label for="Midterm_remark"> Midterm Remark</label><br>
+                    <input type="text" id="Midterm_remark" name="Midterm_remark" class="remarkLabel">
+                    <br>
+        
+                    <label for="Final_remark"> Final Exam Remark</label><br>
+                    <input type="text" id="Final_remark" name="Final_remark" class="remarkLabel">
+                    <br>
+                    
+                    <button type="submit" class="submit-bttn">Submit</button>
+                </form>
+                <br>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class = 'footer_text'>
+            <div class = footer_link>
+                <a href = "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank"> Faculty of Computer Science @ UofT </a>
+            </div>
+            <div class = 'footer_blurb'>Website Designed + Developed by Shaahid and Sharon</div>
+        </div>
+    </footer>
+</html>

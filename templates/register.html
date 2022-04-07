@@ -1,0 +1,59 @@
+<!DOCTYPE html> <!-- this just specifies that this is an html file-->
+<html>  
+    <head>
+        <meta charset="utf-8"> <!--standard. turns our code into 8 bit or smth. always add-->
+        <meta name="viewport" content = "width=device-width, initial-scale=1"> <!-- will allow website to resize depending on laptop/phone etc-->
+        <title>CSCB20 Winter 2022 - Log In</title> <!--this part is what appears on the tab header-->
+    
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> <!-- regular weight -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"> <!-- diff weight -->
+
+        <link rel="stylesheet" href="../static/styles.css" /> <!-- this is where we'll load in the css file-->
+    </head>
+    <body>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div>{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+        <div class = "content">
+            <div class = "login-content">
+                <img src = "../static/media/login.jpg" class = "login-img">
+                <div class = "login-process">
+                    <h1>Register</h1>
+                    <h5>Glad you’re joining CSCB20! Please enter your information below.</h5><br>
+                    <form action="http://127.0.0.1:5000/register" method = "post" id="login-form">
+                        <label for="user">User</label><br><br>
+                        <div class="radio-options">
+                            <label for="Student">Instructor</label>
+                            <input type="radio" id="Instructor" value = "Instructor" name="User">
+                            <label for="Student">Student</label>
+                            <input type="radio" id="Student" value = "Student" name="User">
+                        </div>
+                        <br>
+                        
+                        <label for="Email">Email</label>
+                        <input type="text" id="Email" name="Email" class="loginLabel">
+                        <br>
+
+                        <label for="utorid">Utorid</label>
+                        <input type="text" id="Utorid" name="Utorid" class="loginLabel">
+                        <br>
+                        
+                        <label for="Password">Password</label>
+                        <input type="text" id="password" name="Password" class="loginLabel">
+                        <br>
+
+                        <button type="register" class="login-bttn">Register</button>
+                        <h6>Already have an account? <a href = "{{ url_for('home') }}"><u>Login</u></a></h6>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

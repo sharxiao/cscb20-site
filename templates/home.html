@@ -1,0 +1,121 @@
+<!DOCTYPE html> <!-- this just specifies that this is an html file-->
+<html>  
+    <head>
+        <meta charset = "utf-8"> <!--standard. turns our code into 8 bit or smth. always add-->
+        <meta name = "viewport" content = "width=device-width, initial-scale=1"> <!-- will allow website to resize depending on laptop/phone etc-->
+        <title>CSCB20 Winter 2022</title> <!--this part is what appears on the tab header-->
+    
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> <!-- regular weight -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"> <!-- diff weight -->
+
+        <link rel = "stylesheet" href = "../static/styles.css" /> <!-- this is where we'll load in the css file-->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?"/>
+    </head>
+    <body>
+        <div class = "header">CSCB20 - Introduction to Databases and Web Applications</div>
+        <br>
+        <div class = "nav_bar">
+            <ul>
+                <li>
+                    <a href = "{{ url_for('welcome') }}" class = "current-bttn">Home</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('profile') }}" class = "bttn">Profile</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('announcements') }}" class = "bttn">Announcements</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('syllabus') }}" class = "bttn">Syllabus</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('lectureSlides') }}" class = "bttn">Lectures</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('assignments') }}" class = "bttn">Assignments</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('labs') }}" class = "bttn">Labs</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('officeHours') }}" class = "bttn">Office Hours</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('piazza') }}" class = "bttn">Piazza</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('markus') }}" class = "bttn">Markus</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('courseTeam') }}" class = "bttn">Course Team</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class = "content">
+            <div class = "indexContent">
+                <img src = "../static/media/welcome.jpg" style = "margin: 15px 50px 15px 15px;" class = "welcome-img"/>
+                <br>
+                <h3> Welcome {{ session.name }} to the B20 Course Page!</h3>
+                <h2>Course Description</h2>
+                <p>
+                    A practical introduction to databases and Web app development. Databases: terminology and applications; creating, querying and updating databases; 
+                    the entity-relationship model for database design. Web documents and applications: static and interactive documents; Web servers and dynamic server-generated content; 
+                    Web application development and interface with databases.
+                </p>
+                <br>
+                <div class = "container">
+                    <div class = "box">
+                        <h2>Prequisite</h2>
+                        <p>Some experience with programming in an imperative language such as Python, Java, or C.</p>
+                    </div>
+                    <div class = "box">
+                        <h2>Exclusion</h2>
+                        <p>This course may not be taken after - or concurrently with - any C- or D-level CSC course.</p>
+                    </div>
+                    <div class = "box">
+                        <h2>Syllabus</h2>
+                        <p><a href = "https://www.utsc.utoronto.ca/~bretscher/b20/syllabus.pdf" target = "_blank">PDF</a></p>
+                    </div>
+                </div>
+                <div class = "instructor">
+                    <br><br>
+                    <h2>Instuctor</h2>
+                    <p>Dr. Purva R. Gawde</p>
+                    <form id = "form1">
+                        <div class = "divIndexTable">
+                            <div class = "divIndexRow">
+                                <div class = "divLeftCell">Email</div>
+                                <div class = "divRightCell">purva.gawde@utoronto.ca</div>
+                            </div>
+                            <div class = "divIndexRow">
+                                <div class = "divLeftCell">Phone</div>
+                                <div class = "divRightCell">123-4567-8901</div>
+                            </div>
+                            <div class = "divIndexRow">
+                                <div class = "divLeftCell">Lectures</div>
+                                <div class = "divRightCell">Monday 9-11am HB101</div>
+                            </div>
+                            <div class = "divIndexRow">
+                                <div class = "divLeftCell">Office Hours</div>
+                                <div class = "divRightCell">Tuesday 10-11am IC484</div>
+                            </div>
+                        </div>
+                        <br><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class = 'footer_text'>
+            <div class = footer_link>
+                <a href = "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank"> Faculty of Computer Science @ UofT </a>
+            </div>
+            <div class = 'footer_blurb'>Website Designed + Developed by Shaahid and Sharon</div>
+        </div>
+    </footer>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html> <!-- this just specifies that this is an html file-->
+<html>  
+    <head>
+        <meta charset = "utf-8"> <!--standard. turns our code into 8 bit or smth. always add-->
+        <meta name = "viewport" content = "width=device-width, initial-scale=1"> <!-- will allow website to resize depending on laptop/phone etc-->
+        <title>CSCB20 Winter 2022</title> <!--this part is what appears on the tab header-->
+    
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> <!-- regular weight -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"> <!-- diff weight -->
+        
+        <link rel = "stylesheet" href = "../static/styles.css" /> <!-- this is where we'll load in the css file-->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?"/>
+    </head>
+    <body>
+        <div class = "header">Labs</div>
+        <br>
+        <div class = "nav_bar">
+            <ul>
+                <li>
+                    <a href = "{{ url_for('welcome') }}" class = "bttn">Home</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('profile') }}" class = "bttn">Profile</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('announcements') }}" class = "bttn">Announcements</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('syllabus') }}" class = "bttn">Syllabus</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('lectureSlides') }}" class = "bttn">Lectures</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('assignments') }}" class = "bttn">Assignments</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('labs') }}" class = "current-bttn">Labs</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('officeHours') }}" class = "bttn">Office Hours</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('piazza') }}" class = "bttn">Piazza</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('markus') }}" class = "bttn">Markus</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('courseTeam') }}" class = "bttn">Course Team</a>
+                </li>
+            </ul>
+        </div>
+        <div class = "content">
+            <div class = "labsContent">
+                <h2>Overview</h2>
+                <p>Please go to the tutorial section that you signed up for on ACORN. All labs will be held in room BV473.</p><br>
+                <h2>Lab Timetable</h2>
+                <form id="form1">
+                    <div class="divLabsSchedTable">
+                        <div class="headRow">
+                            <div class="divCell">TA/Instructor</div>
+                            <div class="divCell">Lab</div>
+                        </div>
+                        <div class="divRow">
+                            <div class="divCell">Rick</div>
+                            <div class="divCell">TUT0001<br>TUT0002</div>
+                        </div>
+                        <div class="divRow">
+                            <div class="divCell">Vidya</div>
+                            <div class="divCell">TUT0003<br>TUT0004</div>
+                        </div>
+                    </div>
+                </form><br>
+                <h2>Lab Exercises</h2>
+                <form id = "form1">
+                    <div class = "divLabsExTable">
+                        <div class = "headRow">
+                            <div class = "divCell">Week</div>
+                            <div class = "divCell">Lab</div>
+                            <div class = "divCell">Solution</div>
+                        </div>
+                        <div class = "divRow">
+                            <div class = "divCell">2</div>
+                            <div class = "divCell"><a href = "https://www.utsc.utoronto.ca/~bretscher/b20/tutorials/t1/" target = "_blank">Python, Command Line</a></div>
+                            <div class = "divCell">None</div>
+                        </div>
+                        <div class = "divRow">
+                            <div class = "divCell">3</div>
+                            <div class = "divCell"><a href = "https://www.utsc.utoronto.ca/~bretscher/b20/tutorials/t2/relational.pdf" target = "_blank">Handout</a></div>
+                            <div class = "divCell">None</div>
+                        </div>
+                        <div class = "divRow">
+                            <div class = "divCell">4</div>
+                            <div class = "divCell"><a href = "https://www.utsc.utoronto.ca/~bretscher/b20/tutorials/t3/index.html" target = "_blank">Handout</a></div>
+                            <div class = "divCell"><a href = "https://www.utsc.utoronto.ca/~bretscher/b20/tutorials/t3/query_solns.html" target = "_blank">query_solns</a></div>
+                        </div>
+                        <div class = "divRow">
+                            <div class = "divCell">5</div>
+                            <div class = "divCell"><a href = "https://www.utsc.utoronto.ca/~bretscher/b20/tutorials/t4/handout.pdf" target = "_blank">Handout</a></div>
+                            <div class = "divCell"><a href = "https://www.utsc.utoronto.ca/~bretscher/b20/tutorials/t4/tut4_soln.pdf" target = "_blank">Solns</a></div>
+                        </div>
+                        <div class = "divRow">
+                            <div class = "divCell">6</div>
+                            <div class = "divCell"><a href = "https://www.utsc.utoronto.ca/~bretscher/b20/tutorials/t5/handout.pdf" target = "_blank">Handout</a></div>
+                            <div class = "divCell"><a href = "https://www.utsc.utoronto.ca/~bretscher/b20/tutorials/t5/t5_soln.pdf" target = "_blank">Solns</a></div>
+                        </div>
+                        <div class = "divRow">
+                            <div class = "divCell">7</div>
+                            <div class = "divCell"><a href = "https://www.utsc.utoronto.ca/~bretscher/b20/tutorials/t7/handout.pdf" target = "_blank">Handout</a></div>
+                            <div class = "divCell">None</div>
+                        </div>
+                        <div class = "divRow">
+                            <div class = "divCell">8</div>
+                            <div class = "divCell"><a href = "https://www.utsc.utoronto.ca/~bretscher/b20/tutorials/t8/" target = "_blank">Handout</a></div>
+                            <div class = "divCell">None</div>
+                        </div>
+                        <div class = "divRow">
+                            <div class = "divCell">9</div>
+                            <div class = "divCell"><a href = "https://www.utsc.utoronto.ca/~bretscher/b20/tutorials/t9/" target = "_blank">Handout</a></div>
+                            <div class = "divCell">None</div>
+                        </div>
+                        <div class = "divRow">
+                            <div class = "divCell">10</div>
+                            <div class = "divCell"><a href = "https://www.w3schools.com/jquery/jquery_syntax.asp" target = "_blank">W3 tutorial</a></div>
+                            <div class = "divCell">None</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body><br><br>
+    <footer>
+        <div class = 'footer_text'>
+            <div class = footer_link>
+                <a href = "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank"> Faculty of Computer Science @ UofT </a>
+            </div>
+            <div class = 'footer_blurb'>Website Designed + Developed by Shaahid and Sharon</div>
+        </div>
+    </footer>
+</html>

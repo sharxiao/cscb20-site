@@ -1,0 +1,111 @@
+<!DOCTYPE html> <!-- this just specifies that this is an html file-->
+<html>  
+    <head>
+        <meta charset="utf-8"> <!--standard. turns our code into 8 bit or smth. always add-->
+        <meta name="viewport" content = "width=device-width, initial-scale=1"> <!-- will allow website to resize depending on laptop/phone etc-->
+        <title>Assignments</title> <!--this part is what appears on the tab header-->
+    
+         <!-- fonts -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> <!-- regular weight -->
+         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"> <!-- diff weight -->
+
+        <link rel="stylesheet" href="../static/styles.css" /> <!-- this is where we'll load in the css file-->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?"/>
+    </head>
+
+    <body>
+        <div class = "header">Assignments</div>
+        <br>
+        <div class = "nav_bar">
+            <ul>
+                <li>
+                    <a href = "{{ url_for('welcome') }}" class = "bttn">Home</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('profile') }}" class = "bttn">Profile</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('announcements') }}" class = "bttn">Announcements</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('syllabus') }}" class = "bttn">Syllabus</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('lectureSlides') }}" class = "bttn">Lectures</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('assignments') }}" class = "current-bttn">Assignments</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('labs') }}" class = "bttn">Labs</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('officeHours') }}" class = "bttn">Office Hours</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('piazza') }}" class = "bttn">Piazza</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('markus') }}" class = "bttn">Markus</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('courseTeam') }}" class = "bttn">Course Team</a>
+                </li>
+            </ul>
+        </div> 
+        <div class = "content"> 
+            <div class = "assignContent"> 
+                <div class = "indexContent">
+                    <h2>Overview</h2>
+                    <p>
+                        Assignments are due at midnight on the date specified below. You have the choice to work either individually or in groups of no more than three.
+                        Be sure to declare any groups on Markus.
+                    </p>
+                </div>
+                <form id="form1">
+                    <div class="divAssignmentTable">
+                        <div class="headRow">
+                            <div class="divCell">Assignment #</div>
+                            <div  class="divCell">Topic(s)</div>
+                            <div  class="divCell">Handout</div>
+                            <div  class="divCell">Due Date</div>
+                            <div  class="divCell">Solution</div>
+                        </div>
+                        <div class="divRow">
+                            <div class="divCell">1</div>
+                            <div class="divCell">RA and SQL</div>
+                            <a href = https://www.utsc.utoronto.ca/~bretscher/b20/lectures/w1_handout.pdf class="divCell" target = "_blank">A1.pdf</a>
+                            <div class="divCell">February 17th 2022</div>
+                            <a href = https://www.utsc.utoronto.ca/~bretscher/b20/lectures/w1_handout.pdf class="divCell" target = "_blank">A1Sol.pdf</a>
+                        </div>
+                        <div class="divRow">
+                            <div class="divCell">2</div>
+                            <div class="divCell">Flask and Web Dev</div>
+                            <a href = https://www.utsc.utoronto.ca/~bretscher/b20/lectures/w1_handout.pdf class="divCell" target = "_blank">A2.pdf</a>
+                            <div class="divCell">March 17th 2022</div>
+                            <a href = https://www.utsc.utoronto.ca/~bretscher/b20/lectures/w1_handout.pdf class="divCell" target = "_blank">A2Sol.pdf</a>
+                        </div>
+                        <div class="divRow">
+                            <div class="divCell">3</div>
+                            <div class="divCell">Flask and SQL</div>
+                            <a href = https://www.utsc.utoronto.ca/~bretscher/b20/lectures/w1_handout.pdf class="divCell" target = "_blank">A3.pdf</a>
+                            <div class="divCell">April 8th 2022</div>
+                            <a href = https://www.utsc.utoronto.ca/~bretscher/b20/lectures/w1_handout.pdf class="divCell" target = "_blank">A3Sol.pdf</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <div class = 'footer_text'>
+                <div class = footer_link>
+                    <a href = "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank"> Faculty of Computer Science @ UofT </a>
+                </div>
+                <div class = 'footer_blurb'>Website Designed + Developed by Shaahid and Sharon</div>
+            </div>
+        </footer>  
+    </body>
+</html>

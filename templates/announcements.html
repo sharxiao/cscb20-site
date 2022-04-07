@@ -1,0 +1,105 @@
+<!DOCTYPE html> <!-- this just specifies that this is an html file-->
+<html>  
+    <head>
+        <meta charset="utf-8"> <!--standard. turns our code into 8 bit or smth. always add-->
+        <meta name="viewport" content = "width=device-width, initial-scale=1"> <!-- will allow website to resize depending on laptop/phone etc-->
+        <title>Announcements</title> <!--this part is what appears on the tab header-->
+    
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> <!-- regular weight -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"> <!-- diff weight -->
+
+        <link rel="stylesheet" href= "../static/styles.css" /> <!-- this is where we'll load in the css file-->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?"/>
+    </head>
+    <body>
+        <div class = "header">Announcements</div>
+        <br>
+        <div class = "nav_bar">
+            <ul>
+                <li>
+                    <a href = "{{ url_for('welcome') }}" class = "bttn">Home</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('profile') }}" class = "bttn">Profile</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('announcements') }}" class = "current-bttn">Announcements</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('syllabus') }}" class = "bttn">Syllabus</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('lectureSlides') }}" class = "bttn">Lectures</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('assignments') }}" class = "bttn">Assignments</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('labs') }}" class = "bttn">Labs</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('officeHours') }}" class = "bttn">Office Hours</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('piazza') }}" class = "bttn">Piazza</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('markus') }}" class = "bttn">Markus</a>
+                </li>
+                <li>
+                    <a href = "{{ url_for('courseTeam') }}" class = "bttn">Course Team</a>
+                </li>
+            </ul>
+        </div>
+        <div class = "content">
+            <div class = "announcementsContent">
+                <div class = "container">
+                    <div class = "announcementBox">
+                        <div class = "announceTitle"><h3>A1 Meme Fiesta Update <span class = "announceDate">March 3, 2022</span></h3></div>
+                        <p>
+                            Hi everyone,<br><br>An update on the marking scheme. After reviewing some feedback on the bonus marks, we have decided to give everyone who made a meme 1 bonus mark. 
+                            If you were offended by the 'bad meme'/'meme master' section on the rubric, then I am sorry you feel that way. 
+                            It was certainly not my intention to make fun of anyone or make anyone feel bad. Given the context of 'creating a meme', I had to do my fair share and meme on the rubric as well. 
+                            Regrettably, some of you took this literally and I apologize for not thinking about this. 
+                            Since we are on this topic, I will also clarify that the 'piazza bonus' was given to those who found typos on the assignment. Please do not be hurt over this. 
+                            They 'took the bullet' to correct the errors and saved you time. 
+                            Again, I'm sorry for the lack of proofreading on my part, which is also why I added a 'completion bonus' to people that attempted most questions. 
+                            To avoid this issue in the future, there will be no more bonus marks for the rest of the course.<br><br>
+                            Since I will need to go through all the submissions again, the remark request date will be extended to next Monday. 
+                            Also, I was not able to add that many comments due to time constraints so if you want to inquire/clarify about something, I welcome those for remarks as well. 
+                            But, please! Do take a look at the solutions and commentary first. The marks will be updated by Monday night.<br><br>
+                            I hope everyone is satisfied with this result, let us all please move on to the actual content of the course.<br><br>-Daniel
+                        </p>
+                    </div>
+                    <div class = "announcementBox">
+                        <div class = "announceTitle"><h3>Assignment 1 <span class = "announceDate">February 01, 2022</span></h3></div>
+                        <p>
+                            Hello all,<br><br>Assignment 1 handout has been posted on Quercus. The assignment is based on Relational Algebra and SQL. 
+                            Due date for this assignment is February 14th at 11:59. You can work in group of maximum 3 students. 
+                            Please form your groups on MarkUs and start working on the assignment.<br><br>All the best,<br>Purva
+                        </p>
+                    </div>
+                    <div class = "announcementBox">
+                        <div class = "announceTitle"><h3>Welcome to CSCB20! <span class = "announceDate">January 07, 2022</span></h3></div>
+                        <p>
+                            Hello all,<br><br>Welcome to CSCB20 Winter 2022!<br><br>My name is Dr. Purva R. Gawde and I will be your instructor for the course. 
+                            I am looking forward to a terrific semester with you. All details of the course can be found within Quercus.<br><br>
+                            I look forward to working with you this semester and getting off to a strong start!<br><br>Best,<br>Purva
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body><br><br>
+    <footer>
+        <div class = "footer_text">
+            <div class = footer_link>
+                <a href = "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank"> Faculty of Computer Science @ UofT </a>
+            </div>
+            <div class = 'footer_blurb'>Website Designed + Developed by Shaahid and Sharon</div>
+        </div>
+    </footer>
+</html>
